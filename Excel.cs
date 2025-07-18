@@ -5,21 +5,22 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
-
 using System.Drawing;
 using System.IO;
 using System.Linq;
-
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
+
+
+
 namespace JYLIB
 {
-    public class Excel
+    internal class Excel
     {
-        public void KillAllExcel()
+        internal void KillAllExcel()
         {
             Process[] processes = Process.GetProcessesByName("excel");
             foreach (Process process in processes)
@@ -27,7 +28,7 @@ namespace JYLIB
                 process.Kill();
             }
         }
-        public void ExcelToDgv(string filePath, DataGridView dataGridView)
+        internal void ExcelToDgv(string filePath, DataGridView dataGridView)
         {
             dataGridView.DataSource = null; // Clear the existing data source
 
@@ -103,7 +104,7 @@ namespace JYLIB
                 }
             }
         }
-        public void DGVtoExcel(DataGridView dgv, string excelPath)
+        internal void DGVtoExcel(DataGridView dgv, string excelPath)
         {
             _Excel.Application excelApp = null;
             _Excel.Workbook workbook = null;
@@ -165,6 +166,10 @@ namespace JYLIB
                 }
             }
         }
+
+
+
+     
 
     }
 }

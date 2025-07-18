@@ -9,12 +9,13 @@ using System.Data;
 using Microsoft.Office.Interop.Excel;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace JYLIB
 {
-    public class SQL
+    internal class SQL
     {
 
-        public void SQLtoDGV(string server ,string selectedDatabase, string selectedTable, DataGridView dgv)
+        internal void SQLtoDGV(string server ,string selectedDatabase, string selectedTable, DataGridView dgv)
         {
        
        
@@ -54,7 +55,7 @@ namespace JYLIB
         
         }
 
-        public void SQLtoDGVselecting(string server,string selectedDatabase, string selectedTable, string value, string column, DataGridView dgv)
+        internal void SQLtoDGVselecting(string server,string selectedDatabase, string selectedTable, string value, string column, DataGridView dgv)
         {
             string connectionString = $"Data Source={server};Integrated Security=True;Connect Timeout=30;Encrypt=False;Initial Catalog={selectedDatabase}";
             using (SqlConnection connection = new SqlConnection(connectionString))

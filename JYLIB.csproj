@@ -5,6 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<UseWindowsForms>true</UseWindowsForms>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<Title>JYLIB</Title>
+	<Authors>JohnYeung</Authors>
+	<Description>for personal use</Description>
+	<PackageReadmeFile>JYLIB.md</PackageReadmeFile>
+	<AssemblyVersion>1.0.1</AssemblyVersion>
+	<FileVersion>1.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +30,13 @@
       <VersionMajor>2</VersionMajor>
       <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
     </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\hkyeungjo3\Downloads\JYLIB.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

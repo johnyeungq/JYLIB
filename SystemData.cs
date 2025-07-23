@@ -11,13 +11,19 @@ namespace JYLIB
     public class SystemData
     {
 
-        public string Connectionstring(string server ,string DataBase) {
+        public string SQLConnectionstring(string server ,string DataBase) {
 
             
              
 
             return $@"Data Source={server};Integrated Security=True;Connect Timeout=30;Encrypt=False;Initial Catalog={DataBase}";
         
+        }
+
+        public string AccessConnectionString(string filepath)
+        {
+
+            return @$"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={filepath};Persist Security Info=False;";
         }
 
         public static string HostName() {

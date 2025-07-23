@@ -91,6 +91,9 @@ namespace JYLIB
             _excel.ImportNewRowToExcel(filePath, SheetIndex,data);
         }   
 
-
+        public void RefreshExcel(string filePath)
+        {
+            _excel.RefreshExcel(filePath);
+        }   
     }
 }

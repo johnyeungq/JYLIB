@@ -109,6 +109,15 @@ namespace JYLIB
             return dataTable;
 
         }
+        internal async void RefreshExcel(string path)
+        {
+
+            ExcelRefresh ER = new ExcelRefresh();
+            await ER.RefreshingExcel(path);
+
+
+
+        }
 
         internal void ImportNewRowToExcel(string filePath,int ?sheetIndex ,string[] data)
         {

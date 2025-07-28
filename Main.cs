@@ -16,8 +16,7 @@ namespace JYLIB
         private readonly Import _import;
         private readonly DGV _DGV;
         private readonly Start _start;
-
-
+        private readonly SystemData _sysData;
         public Main()
         {
             _open = new Open();
@@ -26,6 +25,7 @@ namespace JYLIB
             _sql = new SQL();
             _import = new Import();
             _DGV = new DGV();
+            _sysData = new SystemData();
         }
 
         public void Browse(TextBox tb)
@@ -86,14 +86,39 @@ namespace JYLIB
             await System.Threading.Tasks.Task.Run(() => task);
 
         }
-        public void ImportNewRowToExcel(string filePath,int SheetIndex, string[] data)
+        public void ImportNewRowToExcel(string filePath, int SheetIndex, string[] data)
         {
-            _excel.ImportNewRowToExcel(filePath, SheetIndex,data);
-        }   
+            _excel.ImportNewRowToExcel(filePath, SheetIndex, data);
+        }
 
         public void RefreshExcel(string filePath)
         {
             _excel.RefreshExcel(filePath);
-        }   
+        }
+
+
+        public string SQLConnectionstring(string server, string DataBase)
+        {
+
+            return _sysData.SQLConnectionstring(server, DataBase);
+        }
+
+        public string AccessConnectionString(string filepath)
+        {
+            return _sysData.AccessConnectionString(filepath);
+        }
+
+        public string HostName()
+        {
+            return _sysData.HostName();
+        }
+
+        public string LocalIPaddress()
+        {
+            return _sysData.LocalIPaddress();
+        }
+
+
+
     }
 }

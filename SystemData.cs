@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace JYLIB
 {
-    public class SystemData
+    internal class SystemData
     {
 
-        public string SQLConnectionstring(string server ,string DataBase) {
+        internal string SQLConnectionstring(string server ,string DataBase) {
 
             
              
@@ -20,13 +20,13 @@ namespace JYLIB
         
         }
 
-        public string AccessConnectionString(string filepath)
+        internal string AccessConnectionString(string filepath)
         {
 
             return @$"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={filepath};Persist Security Info=False;";
         }
 
-        public static string HostName() {
+        internal string HostName() {
            
 
 
@@ -37,7 +37,7 @@ namespace JYLIB
 
         }
 
-        public static string LocalIPaddress()
+        internal string LocalIPaddress()
         {
             string ipAddress = string.Empty;
 

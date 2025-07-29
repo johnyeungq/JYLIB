@@ -31,7 +31,19 @@ namespace JYLIB
 
 
 
+        internal void ImportFileNameToCB(string folderpath ,string Filter, ComboBox CB)
+        {
+           
+            string[] files = System.IO.Directory.GetFiles(folderpath);
 
+            foreach (string file in files)
+            {
+                if (file.Contains(Filter))
+                {
+                    CB.Items.Add(System.IO.Path.GetFileName(file));
+                }
+            }
+        }
 
 
 

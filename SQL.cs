@@ -72,7 +72,7 @@ namespace JYLIB
             catch (Exception ex)
             {
                 return new string[0]; // Return empty array on error
-                MessageBox.Show("Error: " + ex.Message);
+              
             }
             finally
             {

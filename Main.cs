@@ -42,7 +42,7 @@ namespace JYLIB
 
         #region Start
 
-        public void Browse(TextBox tb)
+        public void BrowseToTB(TextBox tb)
         {
             _start.Browse(tb);
         }

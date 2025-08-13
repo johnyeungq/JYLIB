@@ -19,9 +19,15 @@ namespace JYLIB
         private readonly DGV _DGV;
         private readonly Start _start;
         private readonly SystemData _sysData;
+        private readonly Logs _log;
+        private readonly XML _xml;
+        private readonly MSaccess _access;
 
         public Main()
         {
+
+            _access = new MSaccess();
+            _xml = new XML();
             _open = new Open();
             _excel = new Excel();
             _kills = new Kills();
@@ -29,6 +35,8 @@ namespace JYLIB
             _import = new Import();
             _DGV = new DGV();
             _sysData = new SystemData();
+            _log = new Logs();  
+
         }
         #endregion
 
@@ -153,7 +161,15 @@ namespace JYLIB
 
 
 
+        #region Logs
 
+        public void Log(string message)
+        {
+            _log.Log(message);
+        }
+
+
+        #endregion
 
 
         #region System Data
@@ -167,8 +183,30 @@ namespace JYLIB
             return _sysData.LocalIPaddress();
         }
         #endregion
-        
 
-       
+
+
+
+        #region XML
+
+        public List<string> XMLfiletoList(string xmlFilePath, string child, string Node)
+        {
+            return _xml.XMLfiletoList(xmlFilePath, child, Node);
+        }
+
+
+
+
+        #endregion
+
+
+        #region MSaccess
+        public void AccessToCB(string connectionString, string table, string column, ComboBox cb)
+        {
+           _access.AccessToCB(connectionString, table, column, cb);
+        }
+
+        #endregion
+
     }
 }

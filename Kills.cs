@@ -9,7 +9,7 @@ namespace JYLIB
 {
     internal class Kills
     {
-
+      
         internal void Kill(string exe)
         {
             Process[] processes = Process.GetProcessesByName(exe);

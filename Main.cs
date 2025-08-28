@@ -194,7 +194,10 @@ namespace JYLIB
             return _xml.XMLfiletoList(xmlFilePath, child, Node);
         }
 
-
+        public void CreateXmlFile(string xmlFilePath, List<string> values, string child, string node)
+        {
+            _xml.CreateXmlFile(xmlFilePath, values, child, node);
+        }
 
 
         #endregion

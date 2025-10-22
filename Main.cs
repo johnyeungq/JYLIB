@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -22,6 +24,7 @@ namespace JYLIB
         private readonly Logs _log;
         private readonly XML _xml;
         private readonly MSaccess _access;
+        private readonly JCopy _copy;
 
         public Main()
         {
@@ -36,7 +39,7 @@ namespace JYLIB
             _DGV = new DGV();
             _sysData = new SystemData();
             _log = new Logs();  
-
+            _copy = new JCopy();    
         }
         #endregion
 
@@ -96,6 +99,18 @@ namespace JYLIB
         }
 
         #endregion
+
+        #region Copy
+
+        public string[] CopyCount(string org, string des)
+        {
+            string[] counts = _copy.CopyCount(org, des);
+            return counts;
+
+
+        }
+
+        #endregion 
 
 
 
@@ -210,6 +225,31 @@ namespace JYLIB
         }
 
         #endregion
+
+
+
+        #region Checking 
+
+        public static bool IsDarkMode()
+        {
+            try
+            {
+                using var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+                if (key != null)
+                {
+                    var value = key.GetValue("AppsUseLightTheme");
+                    return value is int lightValue && lightValue == 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                Console.WriteLine(ex.Message);
+            }
+            return false; 
+        }
+
+        #endregion 
 
     }
 }

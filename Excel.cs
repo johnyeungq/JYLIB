@@ -30,7 +30,7 @@ namespace JYLIB
            
         }
 
-        public DataTable ExcelToDataTable(string Excel)
+        internal DataTable ExcelToDataTable(string Excel)
         {
             _Excel.Application excelApp = new _Excel.Application();
             _Excel.Workbook workbook = null;

@@ -25,7 +25,7 @@ namespace JYLIB
         private readonly XML _xml;
         private readonly MSaccess _access;
         private readonly JCopy _copy;
-
+        private readonly WindowsManagerJY _WMJY;
         public Main()
         {
 
@@ -40,6 +40,7 @@ namespace JYLIB
             _sysData = new SystemData();
             _log = new Logs();  
             _copy = new JCopy();    
+            _WMJY = new WindowsManagerJY(); 
         }
         #endregion
 
@@ -249,7 +250,24 @@ namespace JYLIB
             return false; 
         }
 
+        #endregion
+
+
+        #region Windows Control
+
+       public async Task MakeProcessWindowTopMostAndMax(string processName)
+        {
+        await     _WMJY.MakeProcessWindowTopMostAndMax(processName);
+        }   
+
+        public void MinimizeAllWindows()
+        {
+          _WMJY.MinimizeAllWindows();
+        }   
+     
+
         #endregion 
+
 
     }
 }

@@ -257,12 +257,12 @@ namespace JYLIB
 
        public async Task MakeProcessWindowTopMostAndMax(string processName)
         {
-        await     _WMJY.MakeProcessWindowTopMostAndMax(processName);
+              await _WMJY.MakeProcessWindowTopMostAndMax(processName);
         }   
 
         public void MinimizeAllWindows()
         {
-          _WMJY.MinimizeAllWindows();
+              _WMJY.MinimizeAllWindows();
         }   
      
 

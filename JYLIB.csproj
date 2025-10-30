@@ -63,6 +63,7 @@
     <None Include="C:\Users\hkyeungjo3\Downloads\JYLIB.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

@@ -60,16 +60,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="C:\Users\hkyeungjo3\Downloads\JYLIB.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="System.Data.OleDb" Version="9.0.8" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.OleDb" Version="9.0.8" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <None Update="JYLIB.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

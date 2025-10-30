@@ -26,6 +26,8 @@ namespace JYLIB
         private readonly MSaccess _access;
         private readonly JCopy _copy;
         private readonly WindowsManagerJY _WMJY;
+        private readonly phoenix _phoenix = new phoenix();  
+
         public Main()
         {
 
@@ -41,6 +43,8 @@ namespace JYLIB
             _log = new Logs();  
             _copy = new JCopy();    
             _WMJY = new WindowsManagerJY(); 
+            _phoenix = new phoenix();
+
         }
         #endregion
 
@@ -263,11 +267,22 @@ namespace JYLIB
         public void MinimizeAllWindows()
         {
               _WMJY.MinimizeAllWindows();
-        }   
-     
+        }
+
+
+        #endregion
+
+
+        #region Phoenix
+
+
+        public async Task StartPhoenixProcedure()
+        {
+         await  _phoenix.Start();
+        }
+
 
         #endregion 
-
 
     }
 }

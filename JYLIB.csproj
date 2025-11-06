@@ -9,7 +9,7 @@
 	<Title>JYLIB</Title>
 	<Authors>JohnYeung</Authors>
 	<Description>for personal use</Description>
-	<PackageReadmeFile>JYLIB.md</PackageReadmeFile>
+	
 	<AssemblyVersion>1.0.2</AssemblyVersion>
 	<FileVersion>1.0.2</FileVersion>
   </PropertyGroup>

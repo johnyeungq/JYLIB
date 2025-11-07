@@ -9,9 +9,9 @@
 	<Title>JYLIB</Title>
 	<Authors>JohnYeung</Authors>
 	<Description>for personal use</Description>
-	
-	<AssemblyVersion>1.0.2</AssemblyVersion>
-	<FileVersion>1.0.2</FileVersion>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<AssemblyVersion>1.0.3</AssemblyVersion>
+	<FileVersion>1.0.3</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -65,7 +65,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="JYLIB.md">
+	  <None Include="README.md" Pack="true" PackagePath="\" />
+	  <None Update="JYLIB.md">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="nuget.config">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+      
+    <None Update="README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

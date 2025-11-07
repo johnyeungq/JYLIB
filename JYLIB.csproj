@@ -69,9 +69,6 @@
 	  <None Update="JYLIB.md">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="nuget.config">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
       
     <None Update="README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

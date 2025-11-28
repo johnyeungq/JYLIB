@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -69,6 +70,11 @@ namespace JYLIB
         #endregion
 
         #region Excel
+
+        public DataTable ExcelToDataTable(string filePath)
+        {
+            return _excel.ExcelToDataTable(filePath);
+        }
 
         public void ExcelToDgv(string filePath, DataGridView dataGridView)
         {
@@ -282,7 +288,19 @@ namespace JYLIB
         }
 
 
-        #endregion 
+        #endregion
+
+
+        #region Input
+
+        public async Task ClickAtScreenAsync(int x, int y)
+        {
+            int delayMs = 100;
+            await input.ClickAtScreenAsync(x, y, delayMs);
+        }
+
+
+        #endregion
 
     }
 }
